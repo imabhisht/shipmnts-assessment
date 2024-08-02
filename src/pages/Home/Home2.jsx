@@ -4,7 +4,12 @@ import {
   MagnifyingGlassIcon,
   FolderIcon,
   DocumentIcon,
+  TrashIcon
 } from "@heroicons/react/20/solid";
+// import { MagnifyingGlassIcon,
+//   FolderIcon,
+//   DocumentIcon,
+//   TrashIcon } from "@heroicons/react/20/outline";
 import { Bars3CenterLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 const people = [
   {
@@ -143,7 +148,6 @@ const File = ({ file }) => (
 
 export default function Example() {
   const [selectedFolder, setSelectedFolder] = React.useState(null);
-  const [datax, setDatax] = React.useState(data);
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
   const [newItemName, setNewItemName] = React.useState("");
   const [isFolder, setIsFolder] = React.useState(true);
@@ -186,6 +190,11 @@ export default function Example() {
     }
   };
 
+
+  let datax = data;
+  if (selectedFolder) {
+    datax = data.find((item) => item.name === selectedFolder).children;
+  }
   return (
     <div className="flex h-screen border-black border-2 bg-white">
       {/* Left sidebar */}
@@ -267,7 +276,7 @@ export default function Example() {
                           scope="col"
                           className="relative py-3.5 pl-3 pr-4 sm:pr-6"
                         >
-                          <span className="sr-only">Edit</span>
+                          <span className="sr-only"></span>
                         </th>
                       </tr>
                     </thead>
@@ -333,7 +342,7 @@ export default function Example() {
                               href="#"
                               className="text-indigo-600 hover:text-indigo-900"
                             >
-                              Edit<span className="sr-only">, {item.name}</span>
+                              <TrashIcon className="w-5 h-5"/><span className="sr-only">, {item.name}</span>
                             </a>
                           </td>
                         </tr>
