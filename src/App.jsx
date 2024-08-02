@@ -23,17 +23,12 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: (
         <ProtectedRoute>
-          <HomePage />
+          <HomePage2 />
         </ProtectedRoute>
       )},
       { path: "/2", element: (
         <ProtectedRoute>
-          <HomePage2 />
-        </ProtectedRoute>
-      )},
-      { path: "/project", element: (
-        <ProtectedRoute>
-          <ProjectPage />
+          <HomePage />
         </ProtectedRoute>
       )},
     ],
@@ -42,23 +37,6 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage />
   },
-  {
-    path: "/project/create",
-    element: (
-      <ProtectedRoute>
-        <CreateProjectsPage />
-      </ProtectedRoute>
-    )
-  },
-  {
-    path: "/project/output",
-    element: (
-      <ProtectedRoute>
-        <ProjectOutputPage />
-      </ProtectedRoute>
-    )
-  
-  }
 ]);
 
 export default () => {
