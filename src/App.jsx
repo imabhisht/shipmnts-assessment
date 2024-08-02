@@ -8,6 +8,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import DashboardLayout from "./routes/DashboardLayout";
 import HomePage from "./pages/Home/Home";
 import HomePage2 from "./pages/Home/Home2";
+import HomePage3 from "./pages/Home/Home2";
+
 
 import ProjectPage from "./pages/Project/Projects";
 import LoginPage from "./pages/Auth/Login";
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage />
   },
+  {
+    path: "/3",
+    element: <HomePage3 />
+  }
 ]);
 
 export default () => {
