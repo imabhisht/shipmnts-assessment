@@ -14,7 +14,6 @@
 */
 import React from 'react'
 import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon , FolderIcon, DocumentIcon } from '@heroicons/react/20/solid'
 import { Bars3CenterLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'
 const people = [
@@ -110,6 +109,7 @@ const File = ({ file }) => (
 export default function Example() {
   const [selectedFolder, setSelectedFolder] = React.useState(null);
   const [ prevFolder, setPrevFolder ] = React.useState(null);
+  const [fileDropDown, setFileDropDown] = React.useState(false);
   let datax = data
   if(selectedFolder){
     console.log(selectedFolder)
@@ -122,7 +122,7 @@ export default function Example() {
       {/* Left sidebar */}
       <div className="w-64 border-r border-gray-700">
         <div className="p-4">
-          <h2 className="text-lg font-semibold mb-4">Files</h2>
+          <h2 className="text-lg font-semibold mb-4">Folder Viewer</h2>
           <div className="flex items-center mb-4">
             <span className="mr-2">main</span>
             <button className="ml-auto">+</button>
@@ -146,6 +146,14 @@ export default function Example() {
       {/* Main content area */}
       <div className="flex-1">
         <div className="p-6">
+
+
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">+ Create Folder</button>
+        <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Create File</button>
+
+
+        
+
         <div className="mt-8 flex flex-col">
           <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">

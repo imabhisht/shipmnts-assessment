@@ -41,12 +41,12 @@ const navigation = [
   { name: "Settings", href: "#", children: [] },
 ];
 const sidebarNavigation = [
-  { name: "Home", href: "/", icon: HomeIcon, current: true },
-  { name: "Projects", href: "/project", icon: FolderOpenIcon, current: false },
+  { name: "Home", href: "/", icon: FolderOpenIcon, current: true },
+  // { name: "Projects", href: "/project", icon: FolderOpenIcon, current: false },
   { name: "Customers", href: "#", icon: UserCircleIcon, current: false },
-  { name: "Flagged", href: "#", icon: FlagIcon, current: false },
-  { name: "Spam", href: "#", icon: NoSymbolIcon, current: false },
-  { name: "Drafts", href: "#", icon: PencilSquareIcon, current: false },
+  // { name: "Flagged", href: "#", icon: FlagIcon, current: false },
+  // { name: "Spam", href: "#", icon: NoSymbolIcon, current: false },
+  // { name: "Drafts", href: "#", icon: PencilSquareIcon, current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -62,7 +62,7 @@ function classNames(...classes) {
 export default function DashboardLayout(props) {
   console.log(props)
   React.useEffect(() => {
-    document.title = props.title;
+    document.title = "Folder Viewer";
   })
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
